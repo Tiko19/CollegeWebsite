@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CollegeWebsite.Models.NoticeModel>
+
+@{
+    ViewBag.Title = "Notices";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Notices</h2>
+
+<p>
+    @Html.ActionLink("Create New", "NoticeCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Notice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "NoticeEdit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "NoticeDetails", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "NoticeDelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,133 @@
+﻿@model IEnumerable<CollegeWebsite.Models.AccomodationModel>
+
+@{
+    ViewBag.Title = "Estimated Costs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Estimated Costs</h2>
+
+    <div>
+        <h4>Tuition Fees</h4>
+        <table class="table-striped">
+            <tr>
+                <th></th>
+                <th>RMB each Academic Year</th>
+            </tr>
+            <tr>
+                <td>English Taught Bachelor Programs</td>
+                <td>16000</td>
+            </tr>
+            <tr>
+                <td>Chinese Taught Bachelor Programs</td>
+                <td>14500</td>
+            </tr>
+            <tr>
+                <td>English Taught Master Programs</td>
+                <td>22000</td>
+            </tr>
+            <tr>
+                <td>Chinese Taught Master Programs</td>
+                <td>19000</td>
+            </tr>
+            <tr>
+                <td>Chinese Language Training Program</td>
+                <td>13000</td>
+            </tr>
+            <tr>
+                <td>Pre-University Foundation Courses</td>
+                <td>15000</td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    
+    <div>
+        <h4>Accomodation</h4>
+        <table class="table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoomType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bathroom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bathroom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+    </div>
+    
+    <div>
+        <h4>Other Fees</h4>
+        <p>Following expenses are for first year only：</p>
+        <ul>
+            <li>Application Fees: 800 RMB</li>
+            <li>Bedding Items: 260 RMB (Optional)</li>
+            <li>Physical Examination: 300 RMB (to be paid to Entry-Exit Inspection undefinedamp; Quarantine Bureau)</li>
+        </ul>
+
+        <p>Annual Expenses from first year to last year:</p>
+        <ul>
+            <li>Medical Insurance Fee: 550 RMB/ year (to be paid to insurance company)</li>
+            <li>Resident Permit: 800 RMB (to be paid to Public Security Bureau by candidate)</li>
+            <li>Living expenses: Approximately 800 RMB/month (Depends on your personal budget)</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h4>Bank Information</h4>
+        <p>If you wish to transfer the tuition to university account, please note that we do not take responsibility for any delays or transaction  in the remittance. We only consider the date on which the amount arrives to our account. Please note that any wrong input will cause failure of the transaction. We request you to take special attention on our account details (given below).</p>
+
+        <h4>For transfers within China</h4>
+        <p>
+            Chinese Currency Account Details: (RMB)<br />
+            User Name: 辽宁石油化工大学<br />
+            Name of the Bank: 中国银行抚顺支行<br />
+            Address of the Bank: 辽宁省抚顺市新抚区东一路10号<br />
+            Bank Account No.: 2895 5630 2396<br />
+            Swift Code: BKCHCNBJ810
+        </p>
+    </div>
+    
+    <div>
+        <h4>For transfers from your country</h4>
+        <p>
+            Foreign Currency Account Details: (USD/RMB only)<br />
+            User Name: LIAONING SHIHUA UNIVERSITY<br />
+            Name of the Bank: BANK OF CHINA<br />
+            Branch: FUSHUN BRANCH<br />
+            Address of the Bank: No. 1, Dandong Road (West), Wanghua
+            District, Fushun, Liaoning Province, P.R.CHINA <br />
+            Bank Account No.: 2895 5630 2396<br />
+            Swift Code: BKCHCNBJ810
+        </p>
+
+        <p><strong>IMPORTANT: </strong>Please note that Chinese Currency account can only receiveCNYand foreign currency account can only receive USD or RMB. Please do not remit other currencies to USD account.At the same time, the money sender’s name must be the individual name</p>
+
+        <p><strong>DO NOT MAKE TRANSFERS FROM INTERNET/MOBILE BANKING OR ATMs </strong>if you are transferring money with-in China. Make the transaction from the bank counter only.</p>
+    </div>
+</div>
+
+
+
+

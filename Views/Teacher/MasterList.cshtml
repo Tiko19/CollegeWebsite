@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CollegeWebsite.Models.ProgramsModel>
+
+@{
+    ViewBag.Title = "Master Programs";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Master Programs</h2>
+
+<p>
+    @Html.ActionLink("Create New", "MasterCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Program)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Intake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tuition)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Program)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tuition)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "MasterEdit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "MasterDetails", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "MasterDelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

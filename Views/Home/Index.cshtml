@@ -1,0 +1,99 @@
+﻿@model IEnumerable<CollegeWebsite.Models.NoticeModel>
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/Images/darya.jpg" alt="Darya">
+        </div>
+
+        <div class="item">
+            <img src="~/Images/jane.jpg" alt="Jane">
+        </div>
+
+        <div class="item">
+            <img src="~/Images/vasily.jpg" alt="Vasily">
+        </div>
+    </div>
+</div>
+
+
+<div class="admissions">
+    <h2>Admissions</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Bachelor Programs</h3>
+            <ul>
+                <li>Petroleum and Gas Engineering</li>
+                <li>Civil Engineering</li>
+                <li>Mechanical Design, Manufactuting and Automation</li>
+            </ul>
+            <p class="btn btn-default">@Html.ActionLink("View more", "BachelorList", "Home")&raquo;</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Master Programs</h3>
+            <ul>
+                <li>MBA (Master of Business Administraion)</li>
+                <li>Oil-Gas Well Engineering</li>
+                <li>Oil-Gas Field Development Engineering</li>
+            </ul>
+            <p class="btn btn-default">@Html.ActionLink("View more", "MasterList", "Home")&raquo;</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Non-Degree Programs</h3>
+            <ul>
+                <li>Courses for Chinese Language Training Program</li>
+                <li>Pre-University Foundation Courses</li>
+            </ul>
+            <p class="btn btn-default">@Html.ActionLink("View more", "NonDegreeList", "Home")&raquo;</p>
+        </div>
+    </div>
+    <br />
+</div>
+
+<div class="news-and-notice">
+    <h2>News and Notices</h2>
+    <br />
+    <table class="table-condensed table-hover">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostDate)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<div class="members">
+    <h2>Members</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Student</h3>
+            <p class="btn btn-default">@Html.ActionLink("Student Login", "LoginForm", "Student")&raquo;</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Staff</h3>
+            <p class="btn btn-default">@Html.ActionLink("Teacher Login", "LoginForm", "Teacher")&raquo;</p>
+        </div>
+    </div>
+    <br />
+</div>

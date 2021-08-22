@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CollegeWebsite.Models.DeadlineModel>
+
+@{
+    ViewBag.Title = "Dates and Deadlines ";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Dates and Deadlines</h2>
+
+<p>
+    @Html.ActionLink("Create New", "DatesDeadlinesCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Intake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CloseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationDates)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CloseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistrationDates)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "DatesDeadlinesEdit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "DatesDeadlinesDetails", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DatesDeadlinesDelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

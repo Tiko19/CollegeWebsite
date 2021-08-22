@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CollegeWebsite.Models.AssociationsModel>
+
+@{
+    ViewBag.Title = "Students' Associations";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Students' Associations</h2>
+
+<p>
+    @Html.ActionLink("Create New", "StudentAssociationsCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Association)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Association)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "StudentAssociationsEdit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "StudentAssociationsDetails", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "StudentAssociationsDelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

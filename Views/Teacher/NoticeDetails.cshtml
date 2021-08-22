@@ -1,0 +1,33 @@
+﻿@model CollegeWebsite.Models.NoticeModel
+
+@{
+    ViewBag.Title = "Notices";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Notice Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Notice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostDate)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "NoticeCreate", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "NoticeList")
+</p>

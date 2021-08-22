@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CollegeWebsite.Models.AccomodationModel>
+
+@{
+    ViewBag.Title = "Accomodation";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Accomodation</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AccomodationCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bathroom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bathroom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AccomodationEdit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "AccomodationDetails", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "AccomodationDelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

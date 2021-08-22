@@ -1,0 +1,42 @@
+﻿@model CollegeWebsite.Models.AccomodationModel
+
+@{
+    ViewBag.Title = "AccomodationDetails";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Accomodation Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bathroom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bathroom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "AccomodationEdit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "AccomodationList")
+</p>

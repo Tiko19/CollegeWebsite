@@ -1,0 +1,106 @@
+﻿@model IEnumerable<CollegeWebsite.Models.AccomodationModel>
+
+@{
+    ViewBag.Title = "Accomodation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Accomodation</h2>
+    
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoomType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bathroom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bathroom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div>
+        <h3>Facilities</h3>
+        <ul>
+            <li>Self-catering property</li>
+            <li>Shared kitchen facilities</li>
+            <li>Coin-operated laundry</li>
+            <li>All utility bills (except Internet fees, TV network fees, over used electricity bills)</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h3>Bedrooms</h3>
+
+        <h4>Furnishings</h4>
+        <p>
+            All student bedrooms are equipped with the following furniture:
+            <ul>
+                <li>Standard single bed</li>
+                <li>Desk and study chair</li>
+                <li>Wardrobe (free standing)</li>
+                <li>Refrigerator</li>
+                <li>Television</li>
+            </ul>
+        </p>
+
+        <h4>Bedding</h4>
+        <p>Bedding, bedlinen and towels are not provided in University flats. You will therefore need to supply these items yourself (such as a duvet, duvet cover, pillows, pillowcases, blankets, sheets and towels).</p>
+        <p>Bedding packs, comprising of a sheet, duvet, duvet cover, pillow and pillowcase, can be purchased from the University (400RMB).</p>
+    </div>
+    
+    <div>
+        <h3>Bathrooms</h3>
+        <p>The majority of international students’ dormitories have shared bathroom, however there are a few Large Single Room has en-suited (private) bathroom (shower room) (comprising shower, WC and sink, water heater).</p>
+    </div>
+    
+    <div>
+        <h3>Communal facilities and services</h3>
+
+        <h3>Cooking Facilities</h3>
+        <p>
+            This is self-catering accommodation and public kitchens are equipped with the following items:
+            <ul>
+                <li>Four-ring electric cookers (only International Accommodation Block B provides)</li>
+                <li>Extractor hood</li>
+                <li>Basin</li>
+                <li>Storage Cupboard</li>
+            </ul>
+        </p>
+
+        <h4>Laundry</h4>
+        <p>Students have access to, coin-operated, onsite laundry facilities.</p>
+
+        <h4>Cleaning and housekeeping</h4>
+        <p>Kitchens are cleaned daily, Monday - Sunday</p>
+        <p>Stairs and hallways are cleaned everyday.</p>
+
+        <strong>Please note that all of our accommodation is non-smoking, this includes e-cigarettes. </strong>
+    </div>
+    
+    <div>
+        <h3>Utilities</h3>
+        <p>All utility bills included (except internet fee and TV network fee). There is an average allowance of electricity but overuse can result in additional charges.</p>
+    </div>
+</div>

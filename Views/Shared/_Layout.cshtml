@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - International Institute of Education</title>
+    <link href="~/Content/MyStyle.css" type="text/css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background-color: #e3f2fd;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("International College", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Programs<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Bachelor Programs", "BachelorList", "Home")</li>
+                            <li>@Html.ActionLink("Master Programs", "MasterList", "Home")</li>
+                            <li>@Html.ActionLink("Non-Degree Programs", "NonDegreeList", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Admission<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Application Procedure", "ApplicationProcedure", "Home")</li>
+                            <li>@Html.ActionLink("Admission Office", "FacultyList", "Home")</li>
+                            <li>@Html.ActionLink("Dates and Deadlines", "DatesDeadlinesList", "Home")</li>
+                            <li>@Html.ActionLink("Eligibility and Requirements", "EligibilityRequirements", "Home")</li>
+                            <li>@Html.ActionLink("Estimated Costs", "EstimatedCosts", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Freshman<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("How to Apply for Entry Visa", "EntryVisa", "Home")</li>
+                            <li>@Html.ActionLink("Financial Information", "FinanceInfo", "Home")</li>
+                            <li>@Html.ActionLink("Arrival at LNPU", "Arrival", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Scholarships<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Chinese Government Scholarships", "ChineseScholarship", "Home")</li>
+                            <li>@Html.ActionLink("Liaoning Petrochemical University Scholarships", "IIEScholarship", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Academics<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Undergraduate", "Undergraduates", "Home")</li>
+                            <li>@Html.ActionLink("Postgraduate", "Postgraduates", "Home")</li>
+                            <li>@Html.ActionLink("Academic Regulations", "AcademicRegulations", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Campus Life<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Rules and Regulations", "RulesRegulations", "Home")</li>
+                            <li>@Html.ActionLink("Accomodation", "AccomodationList", "Home")</li>
+                            <li>@Html.ActionLink("Insurance", "Insurance", "Home")</li>
+                            <li>@Html.ActionLink("Residence Permit", "ResidencePermit", "Home")</li>
+                            <li>@Html.ActionLink("Service on Campus", "CampusService", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Organisations<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Union of International Students' Associations", "StudentsUnion", "Home")</li>
+                            <li>@Html.ActionLink("Students Academic Associations", "StudentsAssociations", "Home")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <p>International Institute of Education, Liaoning Shihua University</p>
+                    <p>No.1 Dandong Road, Fushun 113001, Liaoning, P. R. China</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Campus Utilities</h3>
+                    <ul>
+                        <li>@Html.ActionLink("Application Procedure", "ApplicationProcedure", "Home")</li>
+                        <li>@Html.ActionLink("Student Login System", "LoginForm", "Student")</li>
+                        <li>@Html.ActionLink("Teacher Login System", "LoginForm", "Teacher")</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Admissions</h3>
+                    <ul>
+                        <li>@Html.ActionLink("Bachelor Programs", "BachelorList", "Home")</li>
+                        <li>@Html.ActionLink("Master Programs", "MasterList", "Home")</li>
+                        <li>@Html.ActionLink("Non-Degree Programs", "NonDegreeList", "Home")</li>
+                        <li>@Html.ActionLink("Application Procedure", "ApplicationProcedure", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; @DateTime.Now.Year - International Institute of Education</p>
+        </footer>
+    </div>
+
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            }
+        </script>
+    }
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
